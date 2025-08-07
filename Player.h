@@ -1,12 +1,17 @@
 #pragma once
+#include "Move.h"
+#include "MoveFactory.h"
 #include <string>
 
 class Player
 {
 private:
     std::string name;
+
+protected:
+    Player(std::string name);
+
 public:
-    virtual char makeMove() = 0;
-    void setName(std::string name);
+    virtual Move *makeMove() = 0;
     std::string getName();
 };

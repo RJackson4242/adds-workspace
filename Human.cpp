@@ -1,17 +1,14 @@
 #include "Human.h"
 #include <iostream>
 
-Human::Human() {
-    setName("Human");
-}
+Human::Human() : Player("Human") {}
 
-Human::Human(std::string name) {
-    setName(name);
-}
+Human::Human(std::string name) : Player(name) {}
 
-char Human::makeMove() {
+Move *Human::makeMove()
+{
     std::cout << "Enter move: ";
-    char move;
+    std::string move;
     std::cin >> move;
-    return move;
+    return MoveFactory::getMove(move);
 }

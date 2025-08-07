@@ -1,9 +1,6 @@
 #include "Player.h"
 
-void Player::setName(std::string name)
-{
-    this->name = name;
-}
+Player::Player(std::string name) : name(name) {}
 
 std::string Player::getName()
 {

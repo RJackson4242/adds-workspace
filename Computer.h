@@ -1,10 +1,10 @@
 #pragma once
 #include "Player.h"
 
-class Computer: public Player
+class Computer : public Player
 {
 private:
 public:
     Computer();
-    char makeMove();
+    Move *makeMove();
 };

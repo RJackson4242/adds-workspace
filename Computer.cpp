@@ -1,9 +1,8 @@
 #include "Computer.h"
 
-Computer::Computer() {
-    setName("Computer");
-}
+Computer::Computer() : Player("Computer") {}
 
-char Computer::makeMove() {
-    return 'R';
+Move *Computer::makeMove()
+{
+    return MoveFactory::getMove("Rock");
 }
