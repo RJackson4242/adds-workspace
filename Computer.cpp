@@ -1,4 +1,5 @@
 #include "Computer.h"
+#include "MoveFactory.h"
 
 Computer::Computer() : Player("Computer") {}
 

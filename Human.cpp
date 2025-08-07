@@ -1,5 +1,6 @@
 #include "Human.h"
 #include <iostream>
+#include "MoveFactory.h"
 
 Human::Human() : Player("Human") {}
 
