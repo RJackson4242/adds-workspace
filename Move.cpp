@@ -13,3 +13,8 @@ bool Move::beatsMove(Move *otherMove)
     }
     return false;
 };
+
+std::string Move::getName()
+{
+    return name;
+}
