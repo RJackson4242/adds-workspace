@@ -13,7 +13,7 @@ int Reverser::reverseDigit(int value, int acc)
 
 string Reverser::reverseString(string characters)
 {
-    reverseString(characters, "");
+    return reverseString(characters, "");
 }
 
 string Reverser::reverseString(string characters, string acc)
