@@ -12,7 +12,8 @@ vector<int> Finder::findSubstrings(string s1, string s2) {
         substring.push_back(s2[i-1]);
         size_t found = s1.find(substring, start);
         if (found != string::npos) {
-            result[i-1], start = (found);
+            start = found;
+            result[i-1] = found;
         } else {
             return result;
         }
