@@ -6,11 +6,12 @@ LinkedList::LinkedList() : head(nullptr) {}
 
 LinkedList::LinkedList(int *array, int len)
 {
-    head = nullptr;
     if (len <= 0)
     {
+        head = nullptr;
         return;
     }
+    head = new Node;
     head->data = array[0];
     Node *currentNode = head;
     for (int i = 1; i < len; i++)
