@@ -6,11 +6,11 @@ LinkedList::LinkedList() : head(nullptr) {}
 
 LinkedList::LinkedList(int *array, int len)
 {
+    head = nullptr;
     if (len <= 0)
     {
         return;
     }
-    head = new Node;
     head->data = array[0];
     Node *currentNode = head;
     for (int i = 1; i < len; i++)
@@ -35,7 +35,7 @@ void LinkedList::insertPosition(int pos, int newNum)
 {
     Node *newNode = new Node;
     newNode->data = newNum;
-    if (pos <= 1)
+    if (pos <= 1 || head == nullptr)
     {
         newNode->link = head;
         head = newNode;
@@ -52,6 +52,10 @@ void LinkedList::insertPosition(int pos, int newNum)
 
 bool LinkedList::deletePosition(int pos)
 {
+    if (head == nullptr)
+    {
+        return false;
+    }
     Node *currentNode = head;
     if (pos == 1)
     {
@@ -74,6 +78,10 @@ bool LinkedList::deletePosition(int pos)
 
 int LinkedList::get(int pos)
 {
+    if (head == nullptr)
+    {
+        return std::numeric_limits<int>::max();
+    }
     Node *currentNode = head;
     for (int i = 1; i < pos; i++)
     {
@@ -104,10 +112,14 @@ int LinkedList::search(int target)
 
 void LinkedList::printList()
 {
-    if (head == nullptr) {return;}
+    if (head == nullptr)
+    {
+        return;
+    }
     Node *currentNode = head;
     std::cout << '[';
-    while(currentNode->link != nullptr) {
+    while (currentNode->link != nullptr)
+    {
         std::cout << currentNode->data << ' ';
         currentNode = currentNode->link;
     }
