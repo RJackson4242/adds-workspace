@@ -62,6 +62,7 @@ bool LinkedList::deletePosition(int pos)
     {
         head = head->link;
         delete currentNode;
+        return true;
     }
     for (int i = 2; i < pos; i++)
     {
