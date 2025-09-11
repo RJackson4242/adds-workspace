@@ -84,7 +84,7 @@ bool LinkedList::deletePosition(int pos)
 
 int LinkedList::get(int pos)
 {
-    if (head == nullptr)
+    if (head == nullptr || pos <= 0)
     {
         return std::numeric_limits<int>::max();
     }
