@@ -72,6 +72,10 @@ bool LinkedList::deletePosition(int pos)
         }
         currentNode = currentNode->link;
     }
+    if (currentNode->link == nullptr)
+    {
+        return false;
+    }
     Node *next = currentNode->link->link;
     delete currentNode->link;
     currentNode->link = next;
