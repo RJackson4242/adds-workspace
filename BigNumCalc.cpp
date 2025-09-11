@@ -1,7 +1,7 @@
-#include "bigNumCalc.h"
+#include "BigNumCalc.h"
 #include <algorithm>
 
-std::list<int> bigNumCalc::buildBigNum(std::string numString)
+std::list<int> BigNumCalc::buildBigNum(std::string numString)
 {
     std::list<int> result;
     for (char c : numString)
@@ -11,7 +11,7 @@ std::list<int> bigNumCalc::buildBigNum(std::string numString)
     return result;
 }
 
-std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2)
+std::list<int> BigNumCalc::add(std::list<int> num1, std::list<int> num2)
 {
     std::list<int> result;
     auto it1 = num1.rbegin();
@@ -31,7 +31,7 @@ std::list<int> bigNumCalc::add(std::list<int> num1, std::list<int> num2)
     return result;
 }
 
-std::list<int> bigNumCalc::sub(std::list<int> num1, std::list<int> num2)
+std::list<int> BigNumCalc::sub(std::list<int> num1, std::list<int> num2)
 {
     std::list<int> result;
     auto it1 = num1.rbegin();
@@ -69,7 +69,7 @@ std::list<int> bigNumCalc::sub(std::list<int> num1, std::list<int> num2)
     return result;
 }
 
-std::list<int> bigNumCalc::mul(std::list<int> num1, std::list<int> num2)
+std::list<int> BigNumCalc::mul(std::list<int> num1, std::list<int> num2)
 {
     if (num1.front() == 0) return {0};
     if (num2.front() == 0) return {0};
