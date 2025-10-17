@@ -99,6 +99,7 @@ public:
     // Constructor that builds a min-heap from an existing vector
     Heap(std::vector<T> tree)
     {
+        tree.insert(tree.begin(), (T) NULL);
         this->heapify(tree);
     }
 
@@ -117,11 +118,7 @@ public:
     // Build a min-heap from an existing vector
     void heapify(std::vector<T> tree)
     {
-        // Insert a dummy element at the beginning to simplify calculations
-        tree.insert(tree.begin(), (T)NULL);
-
         this->tree = tree;
-
         // Start from the last non-dummy element and work backwards to maintain the heap property
         for (heapIndex index = this->tree.size() - 1; index >= 1; index--)
         {
