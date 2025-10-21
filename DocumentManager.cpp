@@ -24,6 +24,7 @@ bool DocumentManager::borrowDocument(int docid, int patronID)
     if (!patrons.count(patronID)) { return false; }
     if (!documentsByID.count(docid)) { return false; }
     unordered_set<int> borrowers = borrowed[docid];
+    if(borrowers.count(patronID)) { return false; }
     int max = documentsByID[docid].license_limit;
     if (borrowers.size() >= max) { return false; }
     borrowers.insert(patronID);
