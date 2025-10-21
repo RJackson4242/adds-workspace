@@ -15,10 +15,10 @@ private:
         int license_limit;
     };
 
-    unordered_map<int, Document> documentsByID;           // docid → Document
-    unordered_map<std::string, int> nameToID;             // name → docid
+    unordered_map<int, Document> documentsByID;           // docid -> Document
+    unordered_map<std::string, int> nameToID;             // name -> docid
     unordered_set<int> patrons;                           // patronID
-    unordered_map<int, std::unordered_set<int>> borrowed; // docid → set of patronIDs
+    unordered_map<int, std::unordered_set<int>> borrowed; // docid -> set of patronIDs
 public:
     void addDocument(string name, int id, int license_limit);
 

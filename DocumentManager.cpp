@@ -16,21 +16,33 @@ void DocumentManager::addPatron(int patronID)
 int DocumentManager::search(string name)
 {
     int id = nameToID[name];
-    if (id) { return id; } else { return 0; }
+    if (!id)
+    {
+        return 0;
+    }
+    return id;
 }
 
 bool DocumentManager::borrowDocument(int docid, int patronID)
 {
-    if (!patrons.count(patronID)) { return false; }
-    if (!documentsByID.count(docid)) { return false; }
+    if (!patrons.count(patronID) || !documentsByID.count(docid))
+    {
+        return false;
+    }
     int max = documentsByID[docid].license_limit;
-    if (borrowed[docid].size() >= max) { return false; }
+    if (borrowed[docid].size() >= max)
+    {
+        return false;
+    }
     borrowed[docid].insert(patronID);
     return true;
 }
 
 void DocumentManager::returnDocument(int docid, int patronID)
 {
-    if (!documentsByID.count(docid)) { return; }
+    if (!documentsByID.count(docid))
+    {
+        return;
+    }
     borrowed[docid].erase(patronID);
 }
